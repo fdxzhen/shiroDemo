@@ -33,5 +33,13 @@ public class Permission implements Serializable {
         this.name = name;
     }
 
-    // get,set略
+    @Override
+    public String toString() {
+        return "Permission{" +
+                "id=" + id +
+                ", url='" + url + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+// get,set略
 }

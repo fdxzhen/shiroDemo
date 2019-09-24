@@ -24,7 +24,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 public class ShiroRealm extends AuthorizingRealm {
 
 	@Autowired
@@ -46,18 +45,21 @@ public class ShiroRealm extends AuthorizingRealm {
 
 		// 获取用户角色集
 		List<Role> roleList = userRoleMapper.findByUserName(userName);
+		System.out.println(roleList);
 		Set<String> roleSet = new HashSet<String>();
 		for (Role r : roleList) {
 			roleSet.add(r.getName());
 		}
 		simpleAuthorizationInfo.setRoles(roleSet);
 
+		System.out.println(roleSet);
 		// 获取用户权限集
 		List<Permission> permissionList = userPermissionMapper.findByUserName(userName);
 		Set<String> permissionSet = new HashSet<String>();
 		for (Permission p : permissionList) {
 			permissionSet.add(p.getName());
 		}
+		System.out.println(permissionSet);
 		simpleAuthorizationInfo.setStringPermissions(permissionSet);
 		return simpleAuthorizationInfo;
 	}

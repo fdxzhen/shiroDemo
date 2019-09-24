@@ -33,5 +33,15 @@ public class Role implements Serializable {
         this.memo = memo;
     }
 
-    // get set略
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", memo='" + memo + '\'' +
+                '}';
+    }
+
+
+// get set略
 }

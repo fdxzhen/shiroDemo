@@ -52,4 +52,15 @@ public class User implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", createTime=" + createTime +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }
